@@ -116,7 +116,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">earning Optimal Policies Through Contact <br> in Differentiable
+            <h1 class="title is-1 publication-title">Learning Optimal Policies Through Contact <br> in Differentiable
               Simulation</h1>
             <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">TMLR
                 2023</a></h3>
@@ -293,81 +293,49 @@
 
             <h2 class="title is-3">Results</h2>
 
-            <h3 class="title is-4">Simulation Results</h3>
-
-            <div class="columns">
-              <div class="column has-text-centered">
-                <h3 class="title is-5">One Multi-Task Transformer</h3>
-
-                Trained with
-                <div class="select is-small">
-                  <select id="single-menu-demos" onchange="updateSingleVideo()">
-                    <option value="10">10</option>
-                    <option value="100" selected="selected">100</option>
-                  </select>
-                </div>
-                demos per task, evaluated on
-                <div class="select is-small">
-                  <select id="single-menu-tasks" onchange="updateSingleVideo()">
-                    <option value="open_drawer" selected="selected">open drawer</option>
-                    <option value="slide_block">slide block</option>
-                    <option value="sweep_to_dustpan">sweep to dustpan</option>
-                    <option value="meat_off_grill">meat off grill</option>
-                    <option value="turn_tap">turn tap</option>
-                    <option value="put_in_drawer">put in drawer</option>
-                    <option value="close_jar">close jar</option>
-                    <option value="drag_stick">drag stick</option>
-                    <option value="stack_blocks">stack blocks</option>
-                    <option value="screw_bulb">screw bulb</option>
-                    <option value="put_in_safe">put in safe</option>
-                    <option value="place_wine">place wine</option>
-                    <option value="put_in_cupboard">put in cupboard</option>
-                    <option value="sort_shape">sort shape</option>
-                    <option value="push_buttons">push buttons</option>
-                    <option value="insert_peg">insert peg</option>
-                    <option value="stack_cups">stack cups</option>
-                    <option value="place_cups">place cups</option>
-                  </select>
-                </div>
-                episode
-                <div class="select is-small">
-                  <select id="single-menu-instances" onchange="updateSingleVideo()">
-                    <option value="s1">01</option>
-                    <option value="s2" selected="selected">02</option>
-                    <option value="s3">03</option>
-                    <option value="s4">04</option>
-                    <option value="s5">05</option>
-                  </select>
-                </div>
-                <br />
-                <br />
-
-                <video id="multi-task-result-video" muted autoplay loop width="100%">
-                  <source src="media/results/sim_rollouts/n10-open_drawer-s2.mp4" type="video/mp4">
-                </video>
+            <div class="container">
+              <div class="columns is-vcentered  is-centered">
+                <img src="media/ant_results.png" alt="Ant results" />
+                </br>
               </div>
+              <br>
+              <h2 class="subtitle has-text-centered">
+                Results from the Ant task show that AHAC outperforms all baselines in terms of asymptotic reward. Since
+                we are mainly comparing against zeroth-order baselines, we normalize all rewards to the maximum achieved
+                by PPO. Even though Ant is widely considered a solved task, we find that AHAC achieves 57% more
+                reward than PPO, even if PPO is left to train for 3B timesteps.
+              </h2>
             </div>
-            </br>
-            </br>
 
-            <h3 class="title is-4">Action Predictions</h3>
-
-            <div class="columns">
-              <div class="column has-text-centered">
-                <h3 class="title is-5">Q-Prediction Examples</h3>
-
-                Visualize predictions for
-                <div class="select is-small is-rounded">
-                  <select id="single-menu-qpred" onchange="updateQpredVideo()">
-                    <option value="tomato" selected="selected">"put the tomatoes in the top bin"</option>
-                    <option value="stick">"hit the green ball with the stick"</option>
-                    <option value="handsan">"press the hand san"</option>
-                    <option value="tape">"put the tape in the top drawer"</option>
-                  </select>
-                </div>
+            <div class="container">
+              <div class="columns is-vcentered  is-centered">
+                <img src="media/AntEnv_1_vs_PPO.gif" alt="Ant results" />
+                </br>
               </div>
-
+              <br>
+              <h2 class="subtitle has-text-centered">
+                Qualitatively, AHAC achieves more optimal and natural looking behaviour than our main baseline, PPO.
+              </h2>
             </div>
+
+            <div class="container">
+              <div class="columns is-vcentered  is-centered">
+                <img src="media/locomotion_sweep.png" alt="Ant results" />
+                </br>
+              </div>
+              <br>
+              <h2 class="subtitle has-text-centered">
+                We also run experiments on classic tasks such as hopper. Real robots such as Anymal. The popular
+                Humanoid task with 21 degrees of freedom and an alternative muscle-actuated version with 152 degrees of
+                freedom. We find that AHAC maintains its asymptotic performance across the board. It also exhibits great
+                sample efficiency, requiring 3 order of magnitude less data samples than PPO. Most impressively it also
+                scales significantly better on high dimensional tasks. On the muscle-actuated humanoid, it
+                achieves nearly twice the reward of PPO for the same training time.
+              </h2>
+            </div>
+
+
+
           </div>
         </div>
   </section>
