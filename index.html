@@ -319,82 +319,107 @@
           <div class="row is-full-width">
             <h2 class="title is-3"><span class="dperact">Adaptive Horizon Actor Critic</span></h2>
 
-            <!--/ Re-rendering. -->
-
-            <h2 class="title is-3">Results</h2>
-
             <div class="container">
               <div class="columns is-vcentered  is-centered">
-                <img src="media/ant_results.png" alt="Ant results" />
+                <img src="media/ahac.png" style="max-width:600px;width:100%" alt="AHAC" />
                 </br>
               </div>
               <br>
               <h2 class="subtitle has-text-centered">
-                Results from the Ant task show that AHAC outperforms all baselines in terms of asymptotic reward. Since
-                we are mainly comparing against zeroth-order baselines, we normalize all rewards to the maximum achieved
-                by PPO. Even though Ant is widely considered a solved task, we find that AHAC achieves 41% more
-                reward than PPO, even if PPO is left to train for 3B timesteps.
+                In our work we analyze the issues with first-order gradient estimation in differentiable simulation. We
+                establish the under finite samples, these types of gradients exhibit empirical bias, particularly under
+                stiff dynamics which ocur during contact. To address that we develop a new model-based reinforcement
+                learning algorithm, Adaptive Horizon Actor-Critic (AHAC), which adaptively adjusts the horizon of the
+                model-based optimization to avoid contact. This allows it to reduce bias and obtain asymptotically more
+                optimal policies.
+
+                <div class="columns is-vcentered  is-centered">
+                  <img src="media/ahac_explanation_small.drawio.png" alt="AHAC visual explanation" />
+                  </br>
+                </div>
               </h2>
-            </div>
 
-            <br>
-            <br>
 
-            <div class="container">
-              <div class="columns is-vcentered  is-centered">
-                <video autoplay muted loop height="100%">
-                  <source src="media/AntEnv_1_vs_PPO_compressed.mp4" type="video/mp4">
-                </video>
+              <!--/ Re-rendering. -->
+
+              <h2 class="title is-3">Results</h2>
+
+              <div class="container">
+                <div class="columns is-vcentered  is-centered">
+                  <img src="media/ant_results.png" alt="Ant results" />
+                  </br>
+                </div>
                 <br>
+                <h2 class="subtitle has-text-centered">
+                  Results from the Ant task show that AHAC outperforms all baselines in terms of asymptotic reward.
+                  Since
+                  we are mainly comparing against zeroth-order baselines, we normalize all rewards to the maximum
+                  achieved
+                  by PPO. Even though Ant is widely considered a solved task, we find that AHAC achieves 41% more
+                  reward than PPO, even if PPO is left to train for 3B timesteps.
+                </h2>
               </div>
-              <h2 class="subtitle has-text-centered">
-                Qualitatively, AHAC achieves more optimal and natural looking behaviour than our main baseline, PPO.
-              </h2>
-            </div>
 
-            <br>
-            <br>
-
-            <div class="container">
-              <div class="columns is-vcentered  is-centered">
-                <img src="media/summary_statistics_combined.png" alt="Summary statistics" />
-                </br>
-              </div>
               <br>
-              <h2 class="subtitle has-text-centered">
-                <b>Aggregate asymptotic statistics across all tasks.</b> The <b>left</b> figure shows 50\% IQM with 95\%
-                CI of asymptotic episode rewards across 10 runs. We observe that AHAC is able to achieve 40\% higher
-                reward than our best MFRL baseline, PPO. The <b>right</b> figure shows score distributions as suggest
-                by \citep{agarwal2021deep} which lets us understand the performance variability of each approach. Our
-                proposed approach, AHAC, outperforms baselines even at the worst case, strengthening the case for
-                first-order methods.
-              </h2>
-            </div>
-
-            <br>
-            <br>
-
-            <div class="container">
-              <div class="columns is-vcentered  is-centered">
-                <img src="media/locomotion_sweep.png" alt="Locomotion results" />
-                </br>
-              </div>
               <br>
-              <h2 class="subtitle has-text-centered">
-                We also run experiments on classic tasks such as Hopper. Real robots such as Anymal. The popular
-                Humanoid task with 21 degrees of freedom and an alternative muscle-actuated version with 152 degrees of
-                freedom which we call SNU Humanoid. We find that AHAC maintains its asymptotic performance across the
-                board. It also exhibits great sample efficiency, requiring 3 order of magnitude less data samples than
-                PPO. Most impressively it also
-                scales significantly better on high dimensional tasks. On the muscle-actuated humanoid, it
-                achieves nearly twice the reward of PPO for the same training time.
-              </h2>
+
+              <div class="container">
+                <div class="columns is-vcentered  is-centered">
+                  <video autoplay muted loop height="100%">
+                    <source src="media/AntEnv_1_vs_PPO_compressed.mp4" type="video/mp4">
+                  </video>
+                  <br>
+                </div>
+                <h2 class="subtitle has-text-centered">
+                  Qualitatively, AHAC achieves more optimal and natural looking behaviour than our main baseline, PPO.
+                </h2>
+              </div>
+
+              <br>
+              <br>
+
+              <div class="container">
+                <div class="columns is-vcentered  is-centered">
+                  <img src="media/summary_statistics_combined.png" alt="Summary statistics" />
+                  </br>
+                </div>
+                <br>
+                <h2 class="subtitle has-text-centered">
+                  <b>Aggregate asymptotic statistics across all tasks.</b> The <b>left</b> figure shows 50\% IQM with
+                  95\%
+                  CI of asymptotic episode rewards across 10 runs. We observe that AHAC is able to achieve 40\% higher
+                  reward than our best MFRL baseline, PPO. The <b>right</b> figure shows score distributions as suggest
+                  by \citep{agarwal2021deep} which lets us understand the performance variability of each approach. Our
+                  proposed approach, AHAC, outperforms baselines even at the worst case, strengthening the case for
+                  first-order methods.
+                </h2>
+              </div>
+
+              <br>
+              <br>
+
+              <div class="container">
+                <div class="columns is-vcentered  is-centered">
+                  <img src="media/locomotion_sweep.png" alt="Locomotion results" />
+                  </br>
+                </div>
+                <br>
+                <h2 class="subtitle has-text-centered">
+                  We also run experiments on classic tasks such as Hopper. Real robots such as Anymal. The popular
+                  Humanoid task with 21 degrees of freedom and an alternative muscle-actuated version with 152 degrees
+                  of
+                  freedom which we call SNU Humanoid. We find that AHAC maintains its asymptotic performance across the
+                  board. It also exhibits great sample efficiency, requiring 3 order of magnitude less data samples than
+                  PPO. Most impressively it also
+                  scales significantly better on high dimensional tasks. On the muscle-actuated humanoid, it
+                  achieves nearly twice the reward of PPO for the same training time.
+                </h2>
+              </div>
+
+
+
             </div>
-
-
-
           </div>
-        </div>
   </section>
 
   <!-- <section class="section" id="BibTeX">
