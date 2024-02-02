@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Learning Optimal Policies Through Contact in Differentiable Simulation">
-  <meta name="keywords" content="Reinforcement Learning, Robotics, Differentiable, Simulation">
+  <meta name="description"
+    content="Adaptive Horizon Actor-Critic for Policy Learning in Contact-Rich Differentiable Simulation">
+  <meta name="keywords" content="Reinforcement Learning, Robot Control, Differentiable Simulation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AHAC</title>
 
@@ -116,10 +117,10 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Learning Optimal Policies Through Contact in Differentiable
-              Simulation</h1>
-            <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">TMLR
-                2023</a></h3>
+            <h1 class="title is-1 publication-title">Adaptive Horizon Actor-Critic for Policy Learning in Contact-Rich
+              Differentiable Simulation</h1>
+            <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">ICML
+                2024 Submission</a></h3>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 Authors hidden while paper is under review.
@@ -141,7 +142,7 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a target="_blank" href="https://openreview.net/forum?id=fnBAaUksGL&noteId=5lvhkuIlVb"
+                  <a target="_blank" href="https://openreview.net/forum?id=2FHWFG5ahw"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -196,15 +197,15 @@
                 </span> -->
 
                 <!-- Code Link. -->
-                <!-- <span class="link-block">
-                  <a target="_blank" href="https://github.com/peract/peract"
+                <span class="link-block">
+                  <a target="_blank" href="https://anonymous.4open.science/r/DiffRL-1D68/README.md"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (Anonymized)</span>
                   </a>
-                </span> -->
+                </span>
 
               </div>
             </div>
@@ -259,9 +260,9 @@
         </div>
         <br>
         <h2 class="subtitle has-text-centered">
-          Adaptive Horizon Actor Critic (AHAC) is a first-order model-based reinforcement learning algorithm <br>
-          that achieves up to 91% more asymptotic reward than model-free approaches while being 1000x more sample <br>
-          efficient and more scalable to high-dimensional tasks.
+          Adaptive Horizon Actor Critic (AHAC) is a First-Order Model-Based Reinforcement Learning algorithm <br>
+          that achieves 40% more asymptotic reward than Model-Free approaches across a set of locomotion tasks <br>
+          while being 1000x more sample efficient and more scalable to high-dimensional tasks.
         </h2>
       </div>
     </div>
@@ -276,19 +277,16 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            Model-Free Reinforcement Learning (MFRL) has garnered significant attention for its effectiveness in
-            continuous motor control tasks. However, its limitations become apparent in high-dimensional problems, often
-            leading to suboptimal policies even with extensive training data. Conversely, First-Order Model-Based
-            Reinforcement Learning (FO-MBRL) methods harnessing differentiable simulation offer more accurate gradients
-            but are plagued by instability due to exploding gradients arising from the contact approximation model. We
-            propose Adaptive Horizon Actor Critic (AHAC), a massively parallel FO-MBRL approach that truncates
-            trajectory gradients upon encountering stiff contact, resulting in more stable and accurate gradients. We
-            experimentally show this on a variety of simulated locomotion tasks, where our method achieves up to 91 \%
-            higher asymptotic episodic reward than state-of-the-art MFRL algorithms while also exhibiting lower variance
-            and less hyper-parameter sensitivity than prior FO-MBRL methods. Moreover, our method scales to
-            high-dimensional motor control tasks while maintaining better wall-clock-time efficiency. We believe the
-            ability to learn high-performance policies in a few minutes enables new opportunities to scale RL for robot
-            motor control.
+            Model-Free Reinforcement Learning (MFRL), leveraging the policy gradient theorem, has demonstrated
+            considerable success in continuous control tasks. However, these approaches are plagued by high gradient
+            variance due to zeroth-order gradient estimation, resulting in suboptimal policies. Conversely, First-Order
+            Model-Based Reinforcement Learning~(FO-MBRL) methods employing differentiable simulation provide gradients
+            with reduced variance but are susceptible to bias in scenarios involving stiff dynamics, such as physical
+            contact. This paper investigates the source of this bias and introduces Adaptive Horizon Actor-Critic
+            (AHAC), an FO-MBRL algorithm that reduces gradient bias by adapting the model-based horizon to avoid stiff
+            dynamics. Empirical findings reveal that AHAC outperforms MFRL baselines, attaining 40% more reward across a
+            set of locomotion tasks and efficiently scaling to high-dimensional control environments with improved
+            wall-clock-time efficiency.
           </div>
         </div>
       </div>
@@ -334,7 +332,7 @@
               <h2 class="subtitle has-text-centered">
                 Results from the Ant task show that AHAC outperforms all baselines in terms of asymptotic reward. Since
                 we are mainly comparing against zeroth-order baselines, we normalize all rewards to the maximum achieved
-                by PPO. Even though Ant is widely considered a solved task, we find that AHAC achieves 57% more
+                by PPO. Even though Ant is widely considered a solved task, we find that AHAC achieves 41% more
                 reward than PPO, even if PPO is left to train for 3B timesteps.
               </h2>
             </div>
@@ -359,7 +357,26 @@
 
             <div class="container">
               <div class="columns is-vcentered  is-centered">
-                <img src="media/locomotion_sweep.png" alt="Ant results" />
+                <img src="media/summary_statistics_combined.png" alt="Summary statistics" />
+                </br>
+              </div>
+              <br>
+              <h2 class="subtitle has-text-centered">
+                <b>Aggregate asymptotic statistics across all tasks.</b> The <b>left</b> figure shows 50\% IQM with 95\%
+                CI of asymptotic episode rewards across 10 runs. We observe that AHAC is able to achieve 40\% higher
+                reward than our best MFRL baseline, PPO. The <b>right</b> figure shows score distributions as suggest
+                by \citep{agarwal2021deep} which lets us understand the performance variability of each approach. Our
+                proposed approach, AHAC, outperforms baselines even at the worst case, strengthening the case for
+                first-order methods.
+              </h2>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="container">
+              <div class="columns is-vcentered  is-centered">
+                <img src="media/locomotion_sweep.png" alt="Locomotion results" />
                 </br>
               </div>
               <br>
@@ -367,8 +384,8 @@
                 We also run experiments on classic tasks such as Hopper. Real robots such as Anymal. The popular
                 Humanoid task with 21 degrees of freedom and an alternative muscle-actuated version with 152 degrees of
                 freedom which we call SNU Humanoid. We find that AHAC maintains its asymptotic performance across the
-                board. It also exhibits great
-                sample efficiency, requiring 3 order of magnitude less data samples than PPO. Most impressively it also
+                board. It also exhibits great sample efficiency, requiring 3 order of magnitude less data samples than
+                PPO. Most impressively it also
                 scales significantly better on high dimensional tasks. On the muscle-actuated humanoid, it
                 achieves nearly twice the reward of PPO for the same training time.
               </h2>
