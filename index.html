@@ -221,42 +221,9 @@
     <div class="container is-fullhd">
       <div class="hero-body">
         <div class="container">
-          <div class="columns is-vcentered  is-centered">
-            <div id="wrapper">
-              <video id="home1" autoplay muted loop width="100%">
-                <source src="media/Hopper_Env_1_compressed.mp4" type="video/mp4">
-              </video>
-              <video id="home2" autoplay muted loop width="100%">
-                <source src="media/AntEnv_1_compressed.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <br>
-
-          <div class="columns is-vcentered  is-centered">
-            <div id="wrapper">
-              <video id="home1" autoplay muted loop height="50%">
-                <source src="media/AnymalEnv_1_compressed.mp4" type="video/mp4">
-              </video>
-              <video id="home2" autoplay muted loop height="50%">
-                <source src="media/HumanoidEnv_1_compressed.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <br>
-
-          <div class="columns is-vcentered  is-centered">
-            <div id="wrapper">
-              <video id="home1" autoplay muted loop height="50%">
-                <source src="media/snu_humanoid_SHAC_compressed.mp4" type="video/mp4">
-              </video>
-              <video id="home2" autoplay muted loop height="50%">
-                <source src="media/claw_compressed.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
+          <video id="home1" autoplay muted loop width="100%">
+            <source src="media/all_envs.mp4" type="video/mp4">
+          </video>
         </div>
         <br>
         <h2 class="subtitle has-text-centered">
@@ -301,7 +268,7 @@
       <div class="column is-two-thirds">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/Pa7tNjtK9w0?modestbranding=1&autohide=1&showinfo=0&controls=1"
+          <iframe src="https://www.youtube.com/embed/7eQ2VORUwmU?modestbranding=1&autohide=1&showinfo=0&controls=1"
             frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
@@ -366,7 +333,7 @@
               <div class="container">
                 <div class="columns is-vcentered  is-centered">
                   <video autoplay muted loop height="100%">
-                    <source src="media/AntEnv_1_vs_PPO_compressed.mp4" type="video/mp4">
+                    <source src="media/AHAC_v_PPO_HumanoidEnv.mp4" type="video/mp4">
                   </video>
                   <br>
                 </div>
@@ -416,7 +383,18 @@
                 </h2>
               </div>
 
-
+              <div class="container">
+                <div class="columns is-vcentered  is-centered">
+                  <video autoplay muted loop height="100%">
+                    <source src="media/AHAC_SNUHumanoid.mp4" type="video/mp4">
+                  </video>
+                  <br>
+                </div>
+                <h2 class="subtitle has-text-centered">
+                  Impressively, AHAC scales to a 152 action space muscle-actuated humanoid task, achieving 61% more
+                  reward of PPO.
+                </h2>
+              </div>
 
             </div>
           </div>
