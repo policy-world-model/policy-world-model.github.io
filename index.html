@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-    content="Adaptive Horizon Actor-Critic for Policy Learning in Contact-Rich Differentiable Simulation">
-  <meta name="keywords" content="Reinforcement Learning, Robot Control, Differentiable Simulation">
+  <meta name="description" content="PWM: Policy Learning with Large World Models">
+  <meta name="keywords" content="Reinforcement Learning, Robot Control, World Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AHAC</title>
+  <title>PWM</title>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>
   <script>
@@ -117,9 +116,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Adaptive Horizon Actor-Critic for Policy Learning in Contact-Rich
-              Differentiable Simulation</h1>
-            <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">ICML
+            <h1 class="title is-1 publication-title">PWM: Policy Learning with Large World Models</h1>
+            <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">NeurIPS
                 2024 Submission</a></h3>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
@@ -142,7 +140,7 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a target="_blank" href="https://openreview.net/forum?id=2FHWFG5ahw"
+                  <a target="_blank" href="https://openreview.net/forum?id=VQOoHBRbpC"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -197,7 +195,7 @@
                 </span> -->
 
                 <!-- Code Link. -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a target="_blank" href="https://anonymous.4open.science/r/DiffRL-1D68/README.md"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -205,7 +203,7 @@
                     </span>
                     <span>Code (Anonymized)</span>
                   </a>
-                </span>
+                </span> -->
 
               </div>
             </div>
@@ -215,7 +213,7 @@
     </div>
   </section>
 
-  <section class="hero teaser">
+  <!-- <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
         <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -228,13 +226,13 @@
         </h2>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
+  <!-- <section class="section">
+    <div class="container is-max-desktop"> -->
+  <!-- Abstract. -->
+  <!-- <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
@@ -252,13 +250,13 @@
         </div>
       </div>
       <br>
-      <br>
-      <!--/ Abstract. -->
+      <br> -->
+  <!--/ Abstract. -->
 
-    </div>
+  <!-- </div> -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+  <!-- Paper video. -->
+  <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-two-thirds">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -266,159 +264,8 @@
             frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-widescreen">
-
-      <div class="rows">
-
-
-        <!-- Animation. -->
-        <div class="rows is-centered ">
-          <div class="row is-full-width">
-            <h2 class="title is-3"><span class="dperact">Adaptive Horizon Actor Critic</span></h2>
-
-            <div class="container">
-              <br>
-              In our work we analyze the issues with first-order gradient estimation in differentiable simulation. We
-              establish the under finite samples, these types of gradients exhibit empirical bias, particularly under
-              stiff dynamics which ocur during contact. To address that we develop a new model-based reinforcement
-              learning algorithm, Adaptive Horizon Actor-Critic (AHAC), which adaptively adjusts the horizon of the
-              model-based optimization to avoid contact. This allows it to reduce bias and obtain asymptotically more
-              optimal policies.
-
-              <br>
-              <br>
-              <br>
-
-              <div class="columns is-vcentered  is-centered">
-                <img src="media/ahac_explanation_small.drawio.png" alt="AHAC visual explanation" />
-              </div>
-
-
-              <!--/ Re-rendering. -->
-
-              <h2 class="title is-3">Results</h2>
-
-              <div class="container">
-                <div class="columns is-vcentered  is-centered">
-                  <img src="media/ant_results.png" alt="Ant results" />
-                  </br>
-                </div>
-                <br>
-                <h2 class="subtitle has-text-centered">
-                  Results from the Ant task show that AHAC outperforms all baselines in terms of asymptotic reward.
-                  Since
-                  we are mainly comparing against zeroth-order baselines, we normalize all rewards to the maximum
-                  achieved
-                  by PPO. Even though Ant is widely considered a solved task, we find that AHAC achieves 41% more
-                  reward than PPO, even if PPO is left to train for 3B timesteps.
-                </h2>
-              </div>
-
-              <br>
-              <br>
-
-              <div class="container">
-                <div class="columns is-vcentered  is-centered">
-                  <video autoplay muted loop height="100%">
-                    <source src="media/AHAC_v_PPO_HumanoidEnv_trimmed.mp4" type="video/mp4">
-                  </video>
-                  <br>
-                </div>
-                <h2 class="subtitle has-text-centered">
-                  Qualitatively, AHAC achieves more optimal and natural looking behaviour than our main baseline, PPO.
-                </h2>
-              </div>
-
-              <br>
-              <br>
-
-              <div class="container">
-                <div class="columns is-vcentered  is-centered">
-                  <img src="media/summary_statistics_combined.png" alt="Summary statistics" />
-                  </br>
-                </div>
-                <br>
-                <h2 class="subtitle has-text-centered">
-                  <b>Aggregate asymptotic statistics across all tasks.</b> The <b>left</b> figure shows 50\% IQM with
-                  95\%
-                  CI of asymptotic episode rewards across 10 runs. We observe that AHAC is able to achieve 40\% higher
-                  reward than our best MFRL baseline, PPO. The <b>right</b> figure shows score distributions as suggest
-                  by \citep{agarwal2021deep} which lets us understand the performance variability of each approach. Our
-                  proposed approach, AHAC, outperforms baselines even at the worst case, strengthening the case for
-                  first-order methods.
-                </h2>
-              </div>
-
-              <br>
-              <br>
-
-              <div class="container">
-                <div class="columns is-vcentered  is-centered">
-                  <img src="media/locomotion_sweep.png" alt="Locomotion results" />
-                  </br>
-                </div>
-                <br>
-                <h2 class="subtitle has-text-centered">
-                  We also run experiments on classic tasks such as Hopper. Real robots such as Anymal. The popular
-                  Humanoid task with 21 degrees of freedom and an alternative muscle-actuated version with 152 degrees
-                  of
-                  freedom which we call SNU Humanoid. We find that AHAC maintains its asymptotic performance across the
-                  board. It also exhibits great sample efficiency, requiring 3 order of magnitude less data samples than
-                  PPO. Most impressively it also
-                  scales significantly better on high dimensional tasks. On the muscle-actuated humanoid, it
-                  achieves nearly twice the reward of PPO for the same training time.
-                </h2>
-              </div>
-
-              <br>
-
-              <div class="container">
-                <div class="columns is-vcentered  is-centered">
-                  <video autoplay muted loop height="100%">
-                    <source src="media/AHAC_SNUHumanoid_trimmed.mp4" type="video/mp4">
-                  </video>
-                  <br>
-                </div>
-                <h2 class="subtitle has-text-centered">
-                  Impressively, AHAC scales to a 152 action space muscle-actuated humanoid task, achieving 61% more
-                  reward of PPO.
-                </h2>
-              </div>
-
-            </div>
-          </div>
-
-          <br>
-
-          <div class="columns is-vcentered  is-centered">
-            <h1>Manipulation experiments</h1>
-            <div id="wrapper">
-              <video id="home1" autoplay muted loop width="100%">
-                <source src="media/claw.mp4" type="video/mp4">
-              </video>
-              <video id="home2" autoplay muted loop width="100%">
-                <source src="media/spray.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-  </section>
-
-  <!-- <section class="section" id="BibTeX">
-    <div class="container is-max-widescreen content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{shridhar2022peract,
-  title     = {Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation}, 
-  author    = {Shridhar, Mohit and Manuelli, Lucas and Fox, Dieter},
-  booktitle = {Proceedings of the 6th Conference on Robot Learning (CoRL)},
-  year      = {2022},
-}</code></pre>
-    </div>
-  </section> -->
+    </div> -->
+  <!-- </section> -->
 
 
   <footer class="footer">
