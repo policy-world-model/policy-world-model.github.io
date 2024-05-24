@@ -249,34 +249,57 @@
         </div>
       </div>
     </div>
+  </section>
 
+  <section class="section">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
+          <h2 class="title is-3">Method overview</h2>
           <div class="columns is-vcentered  is-centered">
             <img src="media/teaser.drawio.png" alt="PWM visual explanation" />
           </div>
+          <h2 class="subtitle has-text-centered">
+            Instead of building world models into algorithms, we propose using large-scale multi-task world models as
+            differentiable simulators for policy learning. When well-regularized, these models enable efficient policy
+            learning with first-order gradient optimization. This allows PWM to learn to solve 80 tasks in < 10 minutes
+              each without the need for expensive online planning. </h2>
         </div>
       </div>
     </div>
+  </section>
 
+  <section class="section">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <div class="columns is-vcentered  is-centered">
             <img src="media/teaser_results.png" alt="PWM teaser results" />
           </div>
+          <h2 class="subtitle has-text-centered">
+            We evaluate PWM on high-dimensional continuous control tasks (left figure) and find that it not only
+            outperforms model-free baselines SAC and PPO but also achieves higher rewards than SHAC, a method using the
+            dynamics and reward function of the simulator directly. This indicates that PWM's regularized world model
+            induces a better optimization landscape than the hand-engeneered contact model of the simulation.
+          </h2>
+          <br>
+          <h2 class="subtitle has-text-centered">
+            In an 80-task setting using a large 48M-parameter world model, PWM is able to consistently outperform
+            TDMPC2, an MBRL method that uses the same world model but plans for actions online. This indicates that
+            first-order gradient optimization can learn high-quality policies from large world models and offer a much
+            more scalable alternative to online planning.
+          </h2>
         </div>
       </div>
     </div>
+  </section>
 
 
-    <!-- </div> -->
 
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
+  <!-- </div> -->
+
+  <!-- Paper video. -->
+  <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-two-thirds">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -285,25 +308,25 @@
         </div>
       </div>
     </div> -->
-    <!-- </section> -->
+  <!-- </section> -->
 
 
-    <footer class="footer">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column">
-            <div class="content has-text-centered">
-              <p>
-                Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>
-                made
-                by
-                the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
-              </p>
-            </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <p>
+              Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>
+              made
+              by
+              the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
+            </p>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
 
 </body>
