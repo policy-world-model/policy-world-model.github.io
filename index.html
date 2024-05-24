@@ -229,34 +229,44 @@
   </section> -->
 
 
-  <!-- <section class="section">
-    <div class="container is-max-desktop"> -->
-  <!-- Abstract. -->
-  <!-- <div class="columns is-centered has-text-centered">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            Model-Free Reinforcement Learning (MFRL), leveraging the policy gradient theorem, has demonstrated
-            considerable success in continuous control tasks. However, these approaches are plagued by high gradient
-            variance due to zeroth-order gradient estimation, resulting in suboptimal policies. Conversely, First-Order
-            Model-Based Reinforcement Learning~(FO-MBRL) methods employing differentiable simulation provide gradients
-            with reduced variance but are susceptible to bias in scenarios involving stiff dynamics, such as physical
-            contact. This paper investigates the source of this bias and introduces Adaptive Horizon Actor-Critic
-            (AHAC), an FO-MBRL algorithm that reduces gradient bias by adapting the model-based horizon to avoid stiff
-            dynamics. Empirical findings reveal that AHAC outperforms MFRL baselines, attaining 40% more reward across a
-            set of locomotion tasks and efficiently scaling to high-dimensional control environments with improved
-            wall-clock-time efficiency.
+            We propose Policy learning through World Models (PWM), a novel model-based Reinforcement Learning (RL)
+            algorithm for learning continuous control policies from large multi-task world models. Instead of treating
+            world models as components of methods, we suggest using them as generalist differentiable physics
+            simulators, which allows for efficient policy training using first-order gradients. We demonstrate that PWM
+            not only learns better policies than existing baselines on tasks with up to 152 action dimensions but also
+            outperforms methods using ground-truth simulation dynamics. Furthermore, our approach scales to an 80-task
+            setting and learns 13% higher reward than existing multi-task baselines without relying on expensive online
+            planning. PWM's framework not only suggests a shift in how world models are utilized in RL but also sets a
+            precedent for multi-task policies.
+          </div>
+        </div>
+        <br>
+        <div class="column is-four-fifths">
+          <div class="columns is-vcentered  is-centered">
+            <img src="media/teaser.drawio.png" alt="PWM visual explanation" />
+          </div>
+        </div>
+        <br>
+        <div class="column is-four-fifths">
+          <div class="columns is-vcentered  is-centered">
+            <img src="media/teaser_results.png" alt="PWM teaser results" />
           </div>
         </div>
       </div>
       <br>
-      <br> -->
-  <!--/ Abstract. -->
+      <br>
 
-  <!-- </div> -->
+      <!-- </div> -->
 
-  <!-- Paper video. -->
-  <!-- <div class="columns is-centered has-text-centered">
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-two-thirds">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -265,23 +275,24 @@
         </div>
       </div>
     </div> -->
-  <!-- </section> -->
+      <!-- </section> -->
 
 
-  <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column">
-          <div class="content has-text-centered">
-            <p>
-              Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by
-              the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
-            </p>
+      <footer class="footer">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column">
+              <div class="content has-text-centered">
+                <p>
+                  Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made
+                  by
+                  the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </footer>
+      </footer>
 
 
 </body>
