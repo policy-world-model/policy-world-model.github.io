@@ -272,22 +272,16 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-two-thirds">
           <div class="columns is-vcentered  is-centered">
             <img src="media/teaser_results.png" alt="PWM teaser results" />
           </div>
           <h2 class="subtitle has-text-centered">
-            We evaluate PWM on high-dimensional continuous control tasks (left figure) and find that it not only
+            We evaluate PWM on high-dimensional continuous control tasks <b>(left figure)</b> and find that it not only
             outperforms model-free baselines SAC and PPO but also achieves higher rewards than SHAC, a method using the
-            dynamics and reward function of the simulator directly. This indicates that PWM's regularized world model
-            induces a better optimization landscape than the hand-engeneered contact model of the simulation.
-          </h2>
-          <br>
-          <h2 class="subtitle has-text-centered">
-            In an 80-task setting using a large 48M-parameter world model, PWM is able to consistently outperform
-            TDMPC2, an MBRL method that uses the same world model but plans for actions online. This indicates that
-            first-order gradient optimization can learn high-quality policies from large world models and offer a much
-            more scalable alternative to online planning.
+            dynamics and reward function of the simulator directly. In an 80-task setting <b>(right figure)</b> using a
+            large 48M-parameter world model, PWM is able to consistently outperform
+            TDMPC2, an MBRL method that uses the same world model but plans for actions online.
           </h2>
         </div>
       </div>
