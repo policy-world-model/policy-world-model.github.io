@@ -319,14 +319,19 @@
               <br>
               <br>
 
-              <div class="columns is-vcentered  is-centered">
-                <img src="media/dflex_results_agg.png" alt="agg results" />
+              <div class="column is-two-thirds">
+                <div class="columns is-vcentered  is-centered">
+                  <img src="media/dflex_results_agg.png" alt="agg results" />
+                </div>
               </div>
               <br>
               <br>
               <br>
-              Cool text
-
+              The figure shows 50% IQM with solid lines, mean with dashed lines, and 95% CI over all 5 tasks and 5
+              random seeds. PWM is able to achieve a higher reward than model-free baselines PPO and SAC, TDMPC2, which
+              uses the same world model as PWM and SHAC which uses the ground-truth dynamics and reward functions of the
+              simulator. These results indicate that well-regularized world models can smooth out the optimization
+              landscape, allowing for better first-order gradient optimization.
             </div>
 
 
@@ -341,13 +346,24 @@
                 <br>
                 <br>
 
-                <div class="columns is-vcentered  is-centered">
-                  <img src="media/mutlitask_full.png" alt="Full multi-task results" />
+                <div class="column is-two-thirds">
+                  <div class="columns is-vcentered  is-centered">
+                    <img src="media/mutlitask_full.png" alt="Full multi-task results" />
+                  </div>
                 </div>
                 <br>
                 <br>
                 <br>
-                Cool text
+                The <b>left figure</b> shows the performance of PWM and TDMPC2 on 30 and 80 multi-task benchmarks with
+                results over 10 random seeds. PWM is able to outperform TDMPC2 while using the same world model without
+                any form of online planning, making it the more scalable approach to large world models. The right
+                figure compares PWM, a multi-task policy, with single-task experts SAC and DreamerV3. It is impressive
+                that PWM is able to match their performance while being multi-task and only trained on offline data.
+
+                <br>
+
+                We strongly believe that increasingly large world models of billions of parameters and policy learning
+                strategies such as PWM can unlock dexterous robotics at scale.
 
               </div>
             </div>
