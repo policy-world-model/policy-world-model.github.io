@@ -310,25 +310,24 @@
               <video id="teaser" autoplay muted loop playsinline height="100%">
                 <source src="media/dflex.mp4" type="video/mp4">
               </video>
-              <br>
-              <img src="media/dflex_results_agg.png" alt="agg results" />
-              <br>
-              The figure shows 50% IQM with solid lines, mean with dashed lines, and 95% CI over all 5 tasks and 5
-              random seeds. PWM is able to achieve a higher reward than model-free baselines PPO and SAC, TDMPC2, which
-              uses the same world model as PWM and SHAC which uses the ground-truth dynamics and reward functions of the
-              simulator. These results indicate that well-regularized world models can smooth out the optimization
-              landscape, allowing for better first-order gradient optimization.
             </div>
+            <div class="container is-centered">
+              <div class="column is-two-thirds is-centered">
+                <img src="media/dflex_results_agg.png" alt="agg results" />
+              </div>
+            </div>
+            The figure shows 50% IQM with solid lines, mean with dashed lines, and 95% CI over all 5 tasks and 5
+            random seeds. PWM is able to achieve a higher reward than model-free baselines PPO and SAC, TDMPC2, which
+            uses the same world model as PWM and SHAC which uses the ground-truth dynamics and reward functions of the
+            simulator. These results indicate that well-regularized world models can smooth out the optimization
+            landscape, allowing for better first-order gradient optimization.
           </div>
 
           <div class="row is-full-width is-centered">
             <h2 class="title is-3"><span class="dperact">Multi-task results</span></h2>
-
             <div class="container is-centered">
-              <br>
               TODO grid of videos
-              <br>
-              <div class="column is-two-thirds is-centered">
+              <div class="container is-centered">
                 <div class="columns is-vcentered  is-centered">
                   <img src="media/mutlitask_full.png" alt="Full multi-task results" />
                 </div>
