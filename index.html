@@ -259,14 +259,12 @@
           <div class="columns is-vcentered  is-centered">
             <img src="media/teaser.drawio.png" alt="PWM visual explanation" />
           </div>
-          <h2 class="subtitle has-text-centered">
-            Instead of building world models into algorithms, we propose using large-scale multi-task world models as
-            differentiable simulators for policy learning. When well-regularized, these models enable efficient policy
-            learning with first-order gradient optimization. This allows PWM to learn to solve 80 tasks in < 10 minutes
-              each without the need for expensive online planning. </h2>
+          Instead of building world models into algorithms, we propose using large-scale multi-task world models as
+          differentiable simulators for policy learning. When well-regularized, these models enable efficient policy
+          learning with first-order gradient optimization. This allows PWM to learn to solve 80 tasks in < 10 minutes
+            each without the need for expensive online planning. </h2>
         </div>
       </div>
-    </div>
   </section>
 
   <section class="section">
@@ -276,19 +274,15 @@
           <div class="columns is-vcentered  is-centered">
             <img src="media/teaser_results.png" alt="PWM teaser results" />
           </div>
-          <!-- <h2 class="subtitle has-text-centered"> -->
           We evaluate PWM on high-dimensional continuous control tasks <b>(left figure)</b> and find that it not only
           outperforms model-free baselines SAC and PPO but also achieves higher rewards than SHAC, a method using the
           dynamics and reward function of the simulator directly. In an 80-task setting <b>(right figure)</b> using a
           large 48M-parameter world model, PWM is able to consistently outperform
           TDMPC2, an MBRL method that uses the same world model but plans for actions online.
-          <!-- </h2> -->
         </div>
       </div>
     </div>
   </section>
-
-
 
   <!-- </div> -->
 
@@ -303,6 +297,65 @@
       </div>
     </div> -->
   <!-- </section> -->
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+
+      <div class="rows">
+
+
+        <!-- Animation. -->
+        <div class="rows is-centered ">
+          <div class="row is-full-width">
+            <h2 class="title is-3"><span class="dperact">Single-task results</span></h2>
+
+            <div class="container">
+              <br>
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="media/dflex.mp4" type="video/mp4">
+              </video>
+
+              <br>
+              <br>
+              <br>
+
+              <div class="columns is-vcentered  is-centered">
+                <img src="media/dflex_results_agg.png" alt="agg results" />
+              </div>
+              <br>
+              <br>
+              <br>
+              Cool text
+
+            </div>
+
+
+            <div class="row is-full-width">
+              <h2 class="title is-3"><span class="dperact">Multi-task results</span></h2>
+
+              <div class="container">
+                <br>
+                TODO grid of videos
+
+                <br>
+                <br>
+                <br>
+
+                <div class="columns is-vcentered  is-centered">
+                  <img src="media/mutlitask_full.png" alt="Full multi-task results" />
+                </div>
+                <br>
+                <br>
+                <br>
+                Cool text
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <footer class="footer">
