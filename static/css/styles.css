@@ -8,24 +8,28 @@
     background: #f0f0f0;
 } */
 
+/* Specific styles for the media grid */
 .media-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 10px;
-    width: 80vw;
-    margin: auto;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns specifically for the grid */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 10px; /* space between grid items */
+    width: 80vw; /* limits the width to 80% of the viewport width */
+    margin: 20px auto; /* centers the grid and adds vertical spacing */
+    justify-content: center;
 }
 
+/* Ensure videos and images in the grid fit well */
 .media-grid video, .media-grid img {
     width: 100%;
     height: auto;
     display: block;
 }
 
+/* Responsive adjustments for smaller screens */
 @media (max-width: 800px) {
     .media-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, auto);
+        grid-template-columns: repeat(2, 1fr); /* Changes to 2 columns on smaller screens */
+        grid-template-rows: repeat(5, auto); /* Adjusts rows accordingly */
     }
 }
