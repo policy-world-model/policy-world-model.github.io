@@ -3,7 +3,7 @@ import subprocess
 import sys
 
 def trim_and_compress_video(input_file, output_file, crop_length=None):
-    crf_value = '0'  # Fixed CRF value for better quality
+    crf_value = '18'  # Fixed CRF value for better quality
     if crop_length and crop_length.lower() != 'none':
         crop_option = ['-t', crop_length]
     else:
