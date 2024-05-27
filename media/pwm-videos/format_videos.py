@@ -16,11 +16,11 @@ def process_videos(input_dir, output_dir, start_time, end_time):
             # Construct the ffmpeg command
             command = [
                 'ffmpeg',
-                '-ss', str(start_time),
+                '-ss', f'{start_time:.2f}',
                 '-i', input_path,
-                '-t', str(duration),
+                '-t', f'{duration:.2f}',
                 '-c:v', 'libx264',
-                '-crf', '23',  # 18 is generally considered visually lossless
+                '-crf', '18',  # 18 is generally considered visually lossless
                 '-preset', 'slow',
                 output_path
             ]
@@ -30,13 +30,13 @@ def process_videos(input_dir, output_dir, start_time, end_time):
 
 def parse_time_range(time_range):
     start, end = time_range.split('-')
-    return int(start), int(end)
+    return float(start), float(end)
 
 def main():
     parser = argparse.ArgumentParser(description="Crop and compress videos.")
     parser.add_argument('y', type=str, help="Directory containing the input videos.")
     parser.add_argument('z', type=str, help="Directory to save the processed videos.")
-    parser.add_argument('time_range', type=str, help="Time range to crop from the video, formatted as 'start-end' (e.g., '1-11').")
+    parser.add_argument('time_range', type=str, help="Time range to crop from the video, formatted as 'start-end' (e.g., '1-11' or '1.5-11.5').")
     
     args = parser.parse_args()
     
