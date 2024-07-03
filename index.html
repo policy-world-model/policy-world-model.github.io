@@ -19,107 +19,25 @@
     })(window, document, 'script', 'dataLayer', 'GTM-5VSL39R9');</script>
   <!-- End Google Tag Manager -->
 
-  <script>
-    function updateSingleVideo() {
-      var demo = document.getElementById("single-menu-demos").value;
-      var task = document.getElementById("single-menu-tasks").value;
-      var inst = document.getElementById("single-menu-instances").value;
-
-      console.log("single", demo, task, inst)
-
-      var video = document.getElementById("multi-task-result-video");
-      video.src = "media/results/sim_rollouts/" +
-        "n" +
-        demo +
-        "-" +
-        task +
-        "-" +
-        inst +
-        ".mp4"
-      video.playbackRate = 1.75;
-      video.play();
-    }
-
-    function updateQpredVideo() {
-      var task = document.getElementById("single-menu-qpred").value;
-
-      console.log("qpred", task)
-
-      var video = document.getElementById("q-pred-video");
-      video.src = "media/results/qpred/" +
-        task +
-        ".mp4"
-      video.playbackRate = 1.75;
-      video.play();
-    }
-
-  </script>
-
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
 
-<body onload="updateSingleVideo(); updateQpredVideo();">
-
-  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" target="_blank" href="https://mohitshridhar.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" target="_blank" href="https://cliport.github.io">
-            CLIPort
-          </a>
-          <a class="navbar-item" target="_blank" href="https://askforalfred.com/">
-            ALFRED
-          </a>
-          <a class="navbar-item" target="_blank" href="http://alfworld.github.io/">
-            ALFWorld
-          </a>
-          <a class="navbar-item" target="_blank" href="https://arxiv.org/pdf/1806.03831.pdf">
-            INGRESS
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav> -->
-
+<body>
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">PWM: Policy Learning with Large World Models</h1>
-            <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">NeurIPS
+            <h3 class="title is-4 conference-authors"><a target="_blank" href="https://nips.cc/">NeurIPS
                 2024 Submission</a></h3>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
@@ -215,25 +133,9 @@
     </div>
   </section>
 
-  <!-- <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video id="teaser" autoplay muted loop playsinline height="100%">
-          <source src="media/all_envs_trimmed.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          Adaptive Horizon Actor Critic (AHAC) is a First-Order Model-Based Reinforcement Learning algorithm
-          that achieves 40% more asymptotic reward than Model-Free approaches across a set of locomotion tasks
-          while being 1000x more sample efficient and more scalable to high-dimensional tasks.
-        </h2>
-      </div>
-    </div>
-  </section> -->
-
-
+  <!-- Abstract. -->
   <section class="section">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
@@ -302,19 +204,6 @@
     </div>
   </section>
 
-  <!-- </div> -->
-
-  <!-- Paper video. -->
-  <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/7eQ2VORUwmU?modestbranding=1&autohide=1&showinfo=0&controls=1"
-            frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-
   <section class="section">
     <div class="container is-max-widescreen">
       <div class="columns is-centered has-text-centered">
@@ -346,17 +235,6 @@
         <div class="column is-full">
           <h2 class="title is-3"><span class="dperact">Multi-task results</span></h2>
           <div class="media-grid">
-            <!-- Example for 2x5 grid, adjust src paths accordingly -->
-            <!-- <video src="media/button-press-topdown-wall.mp4" width="128" height="128" autoplay muted loop></video>
-            <img src="media/acrobot-swingup.gif" alt="Gif 1">
-            <video src="media/coffee-pull.mp4" width="128" height="128" autoplay muted loop></video>
-            <img src="media/cheetah-run.gif" alt="Gif 1">
-            <video src="media/door-open.mp4" width="128" height="128" autoplay muted loop></video>
-            <img src="media/finger-spin.gif" alt="Gif 1">
-            <video src="media/plate-slide-back-side.mp4" width="128" height="128" autoplay muted loop></video>
-            <img src="media/quadruped-run.gif" alt="Gif 1">
-            <video src="media/stick-pull.mp4" width="128" height="128" autoplay muted loop></video>
-            <img src="media/reacher-hard.gif" alt="Gif 1"> -->
             <video src="media/pwm-videos/dmcontrol-formatted/fish-swim.mp4" width="128" height="128" autoplay muted loop
               style="height: auto;"></video>
             <video src="media/pwm-videos/metaworld-formatted/mw-coffee-button.mp4" width="128" height="128" autoplay
@@ -377,7 +255,6 @@
               loop style="height: auto;"></video>
             <video src="media/pwm-videos/metaworld-formatted/mw-lever-pull.mp4" width="128" height="128" autoplay muted
               loop style="height: auto;"></video>
-            <!-- Repeat for all media -->
           </div>
           <div class="columns is-centered">
             <img src="media/mutlitask_full.png" alt="Full multi-task results" class="column is-two-thirds" />
@@ -416,9 +293,7 @@
           <div class="content has-text-centered">
             <p>
               Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>
-              made
-              by
-              the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
+              made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
             </p>
           </div>
         </div>
