@@ -159,15 +159,14 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            We propose Policy learning through World Models (PWM), a novel model-based Reinforcement Learning (RL)
-            algorithm for learning continuous control policies from large multi-task world models. Instead of treating
-            world models as components of methods, we suggest using them as generalist differentiable physics
-            simulators, which allows for efficient policy training using first-order gradients. We demonstrate that PWM
-            not only learns better policies than existing baselines on tasks with up to 152 action dimensions but also
-            outperforms methods using ground-truth simulation dynamics. Furthermore, our approach scales to an 80-task
-            setting and learns 13% higher reward than existing multi-task baselines without relying on expensive online
-            planning. PWM's framework not only suggests a shift in how world models are utilized in RL but also sets a
-            precedent for multi-task policies.
+            Reinforcement Learning (RL) has achieved impressive results on complex tasks but struggles in multi-task
+            settings with different embodiments. World models offer scalability by learning a simulation of the
+            environment, yet they often rely on inefficient gradient-free optimization methods. We introduce Policy
+            learning with large World Models (PWM), a novel model-based RL algorithm that learns continuous control
+            policies from large multi-task world models. By pre-training the world model on offline data and using it
+            for first-order gradient policy learning, PWM effectively solves tasks with up to 152 action dimensions and
+            outperforms methods using ground-truth dynamics. Additionally, PWM scales to an 80-task setting, achieving
+            up to 27% higher rewards than existing baselines without the need for expensive online planning.
           </div>
         </div>
       </div>
