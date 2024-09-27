@@ -36,9 +36,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">PWM: Policy Learning with Large World Models</h1>
-            <h3 class="title is-4 conference-authors"><a target="_blank" href="https://nips.cc/">NeurIPS
-                2024 Submission</a></h3>
+            <h1 class="title is-1 publication-title">PWM: Policy Learning with Multi-Task World Models</h1>
+            <h3 class="title is-4 conference-authors">ICLR 2024 Submission</h3>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 Authors hidden while paper is under review.
@@ -159,14 +158,17 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            Reinforcement Learning (RL) has achieved impressive results on complex tasks but struggles in multi-task
+            Reinforcement Learning (RL) has made significant strides in complex tasks but struggles in multi-task
             settings with different embodiments. World models offer scalability by learning a simulation of the
-            environment, yet they often rely on inefficient gradient-free optimization methods. We introduce Policy
-            learning with large World Models (PWM), a novel model-based RL algorithm that learns continuous control
-            policies from large multi-task world models. By pre-training the world model on offline data and using it
-            for first-order gradient policy learning, PWM effectively solves tasks with up to 152 action dimensions and
-            outperforms methods using ground-truth dynamics. Additionally, PWM scales to an 80-task setting, achieving
-            up to 27% higher rewards than existing baselines without the need for expensive online planning.
+            environment, yet they often rely on inefficient gradient-free optimization methods. In contrast,
+            gradient-based methods exhibit lower variance but fail to handle discontinuities. Our research reveals that
+            well-regularized world models can generate smoother optimization landscapes than the actual dynamics,
+            facilitating more effective first-order optimization. We introduce Policy learning with multi-task World
+            Models (PWM), a novel model-based RL algorithm for continuous control policies. Initially, the world model
+            is pre-trained on offline data, and then policies are extracted from it using first-order optimization in
+            less than 10 minutes per task. PWM effectively solves tasks with up to 152 action dimensions and outperforms
+            methods using ground-truth dynamics. Additionally, PWM scales to an 80-task setting, achieving up to 27%
+            higher rewards than existing baselines, without relying on costly online planning.
           </div>
         </div>
       </div>
