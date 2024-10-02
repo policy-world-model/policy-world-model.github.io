@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
 }
@@ -232,7 +236,7 @@ body {
   grid-template-columns: repeat(5, 1fr); /* 5 columns specifically for the grid */
   grid-template-rows: repeat(2, auto); /* 2 rows */
   gap: 10px; /* space between grid items */
-  max-width: 80vw; /* limits the width to 80% of the viewport width */
+  width: 80vw; /* limits the width to 80% of the viewport width */
   margin: 20px auto; /* centers the grid and adds vertical spacing */
   justify-content: center;
 }
