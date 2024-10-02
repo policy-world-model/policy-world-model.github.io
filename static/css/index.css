@@ -2,11 +2,6 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
-}
-
 .footer .icon-link {
   font-size: 25px;
   color: #000;
@@ -238,7 +233,10 @@ body, html {
   gap: 10px; /* space between grid items */
   width: 80vw; /* limits the width to 80% of the viewport width */
   margin: 20px auto; /* centers the grid and adds vertical spacing */
-  justify-content: center;
+  /* justify-content: center; */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* Forces centering */
 }
 
 /* Ensure videos and images in the grid fit well */
